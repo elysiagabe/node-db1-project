@@ -7,8 +7,14 @@ const router = express.Router();
 // === ENDPOINTS === //
 // GET all accounts
 router.get('/', (req, res) => {
+    const limit = req.query.limit || undefined;
+    const sortby = req.query.sortby || 'id';
+    const sortdir = req.query.sortdir || 'asc';
+
     db.select('*')
       .from('accounts')
+      .limit(limit)
+      .orderBy(sortby, sortdir)
       .then(accounts => {
           res.status(200).json(accounts)
       })
