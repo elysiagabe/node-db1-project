@@ -27,5 +27,5 @@ UPDATE Customers SET PostalCode="11122" WHERE ContactName="Bilbo Baggins";
 SELECT COUNT(DISTINCT City) AS City_Count FROM Customers;
 
 -- (Stretch) Find all suppliers who have names longer than 20 characters. You can use `length(SupplierName)` to get the length of the name
-SELECT * FROM [Suppliers]
+SELECT * FROM Suppliers
 WHERE LENGTH(SupplierName) > 20;
